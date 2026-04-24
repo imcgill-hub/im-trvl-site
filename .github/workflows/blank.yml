@@ -1,0 +1,217 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Plane, Shirt, Globe2, Mail, Instagram, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+const products = [
+  {
+    name: "Escape Tee",
+    color: "Black",
+    price: "$58",
+    front: "IM TRVL",
+    back: "ESCAPE THE MATRIX",
+    description: "Heavyweight oversized tee built for movement, airport days, beach nights, and getting out of your old life.",
+  },
+  {
+    name: "Escape Tee",
+    color: "Cream",
+    price: "$58",
+    front: "IM TRVL",
+    back: "ESCAPE THE MATRIX",
+    description: "Same silhouette. Softer tone. Clean, minimal, and made to feel like freedom.",
+  },
+  {
+    name: "Escape Tee",
+    color: "Sand",
+    price: "$58",
+    front: "IM TRVL",
+    back: "ESCAPE THE MATRIX",
+    description: "A neutral drop inspired by Puerto sunsets, dust roads, and the decision to leave.",
+  },
+];
+
+const colorClasses = {
+  Black: "bg-neutral-950 text-white border-neutral-800",
+  Cream: "bg-stone-100 text-neutral-950 border-stone-200",
+  Sand: "bg-[#bca98c] text-neutral-950 border-[#a89579]",
+};
+
+export default function IMTRVLLandingPage() {
+  const [email, setEmail] = useState("");
+  const [selected, setSelected] = useState("Black");
+  const activeProduct = products.find((p) => p.color === selected) || products[0];
+
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white selection:bg-white selection:text-black">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+          <a href="#top" className="text-lg font-semibold tracking-[0.45em]">IM TRVL</a>
+          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
+            <a href="#drop" className="transition hover:text-white">Drop</a>
+            <a href="#story" className="transition hover:text-white">Story</a>
+            <a href="#details" className="transition hover:text-white">Details</a>
+          </nav>
+          <Button className="rounded-full bg-white px-5 text-black hover:bg-white/90">
+            Join Waitlist
+          </Button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.14),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(188,169,140,0.18),transparent_35%)]" />
+          <div className="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="relative z-10"
+            >
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">
+                <Plane className="h-4 w-4" /> First drop coming soon
+              </div>
+              <h1 className="max-w-3xl text-6xl font-black leading-[0.9] tracking-tight md:text-8xl">
+                ESCAPE<br />THE MATRIX.
+              </h1>
+              <p className="mt-7 max-w-xl text-lg leading-8 text-white/68 md:text-xl">
+                Minimal travel streetwear by Isaiah McGill. IM means Isaiah McGill. TRVL is the lifestyle — freedom, movement, and choosing the life most people only talk about.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Button size="lg" className="rounded-full bg-white px-7 text-black hover:bg-white/90">
+                  Get early access <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full border-white/20 bg-transparent px-7 text-white hover:bg-white/10 hover:text-white">
+                  View the tee
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="relative z-10"
+            >
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-2xl backdrop-blur">
+                <div className={`${colorClasses[selected]} relative flex min-h-[520px] flex-col justify-between rounded-[1.5rem] border p-8`}>
+                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.35em] opacity-70">
+                    <span>Front</span>
+                    <span>{activeProduct.color}</span>
+                  </div>
+                  <div className="mx-auto flex h-72 w-64 items-center justify-center rounded-t-[7rem] rounded-b-3xl border border-current/20 bg-current/5 shadow-inner">
+                    <span className="text-sm font-bold tracking-[0.55em]">IM TRVL</span>
+                  </div>
+                  <div className="rounded-2xl bg-black/20 p-5 backdrop-blur">
+                    <p className="text-xs uppercase tracking-[0.35em] opacity-70">Back Print</p>
+                    <p className="mt-2 text-3xl font-black leading-none">ESCAPE<br />THE MATRIX</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-white/50 md:block">
+            <ChevronDown className="h-7 w-7 animate-bounce" />
+          </div>
+        </section>
+
+        <section id="drop" className="border-t border-white/10 px-5 py-24 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+              <div>
+                <p className="mb-3 text-sm uppercase tracking-[0.35em] text-white/50">The first piece</p>
+                <h2 className="text-4xl font-black tracking-tight md:text-6xl">The Escape Tee</h2>
+              </div>
+              <p className="max-w-md text-white/60">Oversized, heavyweight, minimal. Built to be worn in airports, beach towns, late nights, and wherever you decide to go next.</p>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              {products.map((product) => (
+                <Card
+                  key={product.color}
+                  onClick={() => setSelected(product.color)}
+                  className={`cursor-pointer rounded-[2rem] border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.08] ${selected === product.color ? "ring-2 ring-white" : ""}`}
+                >
+                  <CardContent className="p-5">
+                    <div className={`${colorClasses[product.color]} mb-5 flex h-80 items-center justify-center rounded-[1.5rem] border`}>
+                      <div className="text-center">
+                        <p className="text-xs font-bold tracking-[0.45em]">{product.front}</p>
+                        <p className="mt-16 text-3xl font-black leading-none">ESCAPE<br />THE MATRIX</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-xl font-bold">{product.name}</h3>
+                        <p className="text-sm text-white/50">{product.color}</p>
+                      </div>
+                      <p className="text-lg font-bold">{product.price}</p>
+                    </div>
+                    <p className="mt-4 text-sm leading-6 text-white/60">{product.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="story" className="border-t border-white/10 bg-stone-100 px-5 py-24 text-neutral-950 md:px-8">
+          <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div className="rounded-[2rem] bg-neutral-950 p-8 text-white">
+              <p className="text-sm uppercase tracking-[0.35em] text-white/50">The meaning</p>
+              <h2 className="mt-5 text-5xl font-black tracking-tight">IM TRVL</h2>
+              <div className="mt-8 space-y-4 text-lg leading-8 text-white/70">
+                <p><strong className="text-white">IM</strong> stands for Isaiah McGill.</p>
+                <p><strong className="text-white">TRVL</strong> is the mindset: leave the loop, move different, and build a life that feels real.</p>
+              </div>
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-[0.35em] text-neutral-500">Brand manifesto</p>
+              <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight md:text-6xl">
+                More than clothing. A reminder that you were never stuck.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
+                The first drop is built around one message: ESCAPE THE MATRIX. Not as a trend — as a decision. Stop waiting for the perfect time. Move. Create. Leave. Become harder to predict.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="details" className="border-t border-white/10 px-5 py-24 md:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+            {[
+              { icon: Shirt, title: "Premium blank", text: "Heavyweight 280 GSM cotton with an oversized unisex fit." },
+              { icon: Globe2, title: "Travel uniform", text: "Made for airport days, beach towns, city walks, and late-night moves." },
+              { icon: Instagram, title: "Content-first brand", text: "Built through real travel content, not fake lifestyle marketing." },
+            ].map((item) => (
+              <Card key={item.title} className="rounded-[2rem] border-white/10 bg-white/[0.04] text-white">
+                <CardContent className="p-8">
+                  <item.icon className="mb-6 h-8 w-8 text-white/70" />
+                  <h3 className="text-2xl font-bold">{item.title}</h3>
+                  <p className="mt-4 leading-7 text-white/60">{item.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="px-5 pb-24 md:px-8">
+          <div className="mx-auto max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 text-center md:p-12">
+            <Mail className="mx-auto mb-5 h-9 w-9 text-white/70" />
+            <h2 className="text-4xl font-black tracking-tight md:text-6xl">Join the first drop.</h2>
+            <p className="mx-auto mt-5 max-w-xl text-white/60">Limited release. No spam. Just early access when the first IM TRVL pieces go live.</p>
+            <form className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                className="h-14 flex-1 rounded-full border border-white/10 bg-black/30 px-6 text-white outline-none placeholder:text-white/35 focus:border-white/40"
+              />
+              <Button className="h-14 rounded-full bg-white px-8 text-black hover:bg-white/90">Notify Me</Button>
+            </form>
+            <p className="mt-5 text-xs uppercase tracking-[0.25em] text-white/35">@im.trvl · Isaiah McGill</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
