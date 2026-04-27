@@ -1,138 +1,226 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>IM TRVL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+diff --git a/index.html b/index.html
+index ed77d1448398a3303078191590f184aef2402b18..9bd9f92fd06b6b6a94e5f44de937cc77c5139268 100644
+--- a/index.html
++++ b/index.html
+@@ -1,138 +1,88 @@
+ <!DOCTYPE html>
+-<html>
++<html lang="en">
+ <head>
+-  <title>IM TRVL</title>
++  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+-
+-  <style>
+-    body {
+-      margin:0;
+-      font-family: Arial, sans-serif;
+-      background:#050505;
+-      color:white;
+-    }
+-
+-    section {
+-      padding:80px 20px;
+-      text-align:center;
+-    }
+-
+-    h1 {
+-      font-size:60px;
+-      line-height:0.9;
+-    }
+-
+-    h2 {
+-      font-size:32px;
+-    }
+-
+-    p {
+-      color:#aaa;
+-      max-width:600px;
+-      margin:20px auto;
+-    }
+-
+-    .btn {
+-      background:white;
+-      color:black;
+-      padding:14px 30px;
+-      border-radius:50px;
+-      text-decoration:none;
+-      font-weight:bold;
+-    }
+-
+-    .products {
+-      display:grid;
+-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+-      gap:20px;
+-      max-width:1000px;
+-      margin:auto;
+-    }
+-
+-    .card {
+-      background:#111;
+-      border-radius:20px;
+-      padding:20px;
+-    }
+-
+-    img {
+-      width:100%;
+-      border-radius:16px;
+-    }
+-
+-    footer {
+-      padding:40px;
+-      border-top:1px solid #222;
+-      font-size:14px;
+-    }
+-
+-    footer a {
+-      color:#888;
+-      margin:0 10px;
+-      text-decoration:none;
+-    }
+-  </style>
++  <title>IM TRVL</title>
++  <link rel="stylesheet" href="styles.css">
+ </head>
+-
+ <body>
+-
+-<!-- HERO -->
+-<section>
+-  <h1>ESCAPE<br>THE MATRIX.</h1>
+-  <p>More than a brand. A mindset.</p>
+-  <a class="btn" href="#products">SHOP THE DROP</a>
+-</section>
+-
+-<!-- PRODUCT SECTION -->
+-<section id="products">
+-  <h2>The Escape Tee</h2>
+-
+-  <div class="products">
+-
+-    <div class="card">
+-      <img src="black-tee.jpg">
+-      <h3>Black</h3>
+-      <p>$45</p>
+-    </div>
+-
+-    <div class="card">
+-      <img src="cream-tee.jpg">
+-      <h3>Cream</h3>
+-      <p>$45</p>
+-    </div>
+-
+-    <div class="card">
+-      <img src="sand-tee.jpg">
+-      <h3>Sand</h3>
+-      <p>$45</p>
+-    </div>
+-
+-  </div>
+-</section>
+-
+-<!-- BRAND -->
+-<section>
+-  <h2>IM TRVL</h2>
+-  <p>For those who choose freedom over comfort.  
+-  For those who move different.  
+-  For those who escape the matrix.</p>
+-</section>
+-
+-<!-- EMAIL -->
+-<section>
+-  <h2>JOIN THE DROP</h2>
+-  <input placeholder="your@email.com" style="padding:15px;border-radius:50px;border:none;">
+-</section>
+-
+-<!-- FOOTER -->
+-<footer>
+-  <a href="privacy.html">Privacy</a>
+-  <a href="terms.html">Terms</a>
+-  <a href="refund.html">Refund</a>
+-  <a href="shipping.html">Shipping</a>
+-  <a href="disclaimer.html">Disclaimer</a>
+-</footer>
+-
++  <main class="page">
++    <header class="topbar">
++      <div class="container topbar-inner">
++        <div class="brand">IM TRVL</div>
++        <nav class="nav" aria-label="Main">
++          <a href="index.html">Home</a>
++          <a href="privacy.html">Privacy</a>
++          <a href="terms.html">Terms</a>
++          <a href="shipping.html">Shipping</a>
++        </nav>
++      </div>
++    </header>
++
++    <section class="hero">
++      <div class="container">
++        <p class="eyebrow">New Drop</p>
++        <h1>Escape the matrix.</h1>
++        <p>A minimal essentials collection for people who move with intention.</p>
++        <div class="actions">
++          <a class="btn" href="#products">Shop the drop</a>
++        </div>
++      </div>
++    </section>
++
++    <section class="section" id="products">
++      <div class="container">
++        <p class="eyebrow">The Escape Tee</p>
++        <div class="grid">
++          <article class="card">
++            <img src="black-tee.jpg" alt="Black Escape tee">
++            <h3>Black</h3>
++            <p class="price">$45</p>
++          </article>
++          <article class="card">
++            <img src="cream-tee.jpg" alt="Cream Escape tee">
++            <h3>Cream</h3>
++            <p class="price">$45</p>
++          </article>
++          <article class="card">
++            <img src="sand-tee.jpg" alt="Sand Escape tee">
++            <h3>Sand</h3>
++            <p class="price">$45</p>
++          </article>
++        </div>
++      </div>
++    </section>
++
++    <section class="section">
++      <div class="container">
++        <p class="eyebrow">About</p>
++        <h2>IM TRVL</h2>
++        <p>For people who choose freedom over noise. Designed to feel clean, calm, and timeless.</p>
++      </div>
++    </section>
++
++    <section class="section">
++      <div class="container">
++        <p class="eyebrow">Stay Updated</p>
++        <h2>Join the drop list</h2>
++        <div class="subscribe">
++          <input type="email" placeholder="your@email.com" aria-label="Email address">
++          <a class="btn" href="index.html">Subscribe</a>
++        </div>
++      </div>
++    </section>
++
++    <footer>
++      <div class="container footer-links">
++        <a href="privacy.html">Privacy</a>
++        <a href="terms.html">Terms</a>
++        <a href="refund.html">Refund</a>
++        <a href="shipping.html">Shipping</a>
++        <a href="disclaimer.html">Disclaimer</a>
++      </div>
++    </footer>
++  </main>
++  <script src="transitions.js"></script>
+ </body>
+ </html>
+-</html>
 
-  <style>
-    body {
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#050505;
-      color:white;
-    }
-
-    section {
-      padding:80px 20px;
-      text-align:center;
-    }
-
-    h1 {
-      font-size:60px;
-      line-height:0.9;
-    }
-
-    h2 {
-      font-size:32px;
-    }
-
-    p {
-      color:#aaa;
-      max-width:600px;
-      margin:20px auto;
-    }
-
-    .btn {
-      background:white;
-      color:black;
-      padding:14px 30px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .products {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-      max-width:1000px;
-      margin:auto;
-    }
-
-    .card {
-      background:#111;
-      border-radius:20px;
-      padding:20px;
-    }
-
-    img {
-      width:100%;
-      border-radius:16px;
-    }
-
-    footer {
-      padding:40px;
-      border-top:1px solid #222;
-      font-size:14px;
-    }
-
-    footer a {
-      color:#888;
-      margin:0 10px;
-      text-decoration:none;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section>
-  <h1>ESCAPE<br>THE MATRIX.</h1>
-  <p>More than a brand. A mindset.</p>
-  <a class="btn" href="#products">SHOP THE DROP</a>
-</section>
-
-<!-- PRODUCT SECTION -->
-<section id="products">
-  <h2>The Escape Tee</h2>
-
-  <div class="products">
-
-    <div class="card">
-      <img src="black-tee.jpg">
-      <h3>Black</h3>
-      <p>$45</p>
-    </div>
-
-    <div class="card">
-      <img src="cream-tee.jpg">
-      <h3>Cream</h3>
-      <p>$45</p>
-    </div>
-
-    <div class="card">
-      <img src="sand-tee.jpg">
-      <h3>Sand</h3>
-      <p>$45</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- BRAND -->
-<section>
-  <h2>IM TRVL</h2>
-  <p>For those who choose freedom over comfort.  
-  For those who move different.  
-  For those who escape the matrix.</p>
-</section>
-
-<!-- EMAIL -->
-<section>
-  <h2>JOIN THE DROP</h2>
-  <input placeholder="your@email.com" style="padding:15px;border-radius:50px;border:none;">
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <a href="privacy.html">Privacy</a>
-  <a href="terms.html">Terms</a>
-  <a href="refund.html">Refund</a>
-  <a href="shipping.html">Shipping</a>
-  <a href="disclaimer.html">Disclaimer</a>
-</footer>
-
-</body>
-</html>
 </html>
